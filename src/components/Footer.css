@@ -1,0 +1,59 @@
+.footer {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 40px;
+    padding: 14px 0;
+    margin-top: 30px;
+    text-align: center;
+    background: #2c228d;
+    color: white;
+    font-size: 2rem;
+}
+
+.bottom-footer {
+    display: flex;
+    text-align: center;
+    justify-content: center;
+    margin-top: 2rem;
+    background: #6200ee;
+    width: 100vw;
+    height: 8vh;
+    max-width: 100%;
+}
+
+.icons {
+    padding-top: 1rem;
+}
+
+.icons a {
+    text-decoration: none;
+    font-size: 2rem;
+    margin: 0.5rem;
+    color: #f4f4f4;
+    padding: 2.5rem;
+}
+
+i.fab {
+    display: inline-block;
+    border-radius: 60px;
+    box-shadow: 0 0 2px white;
+    padding: 0.5em 0.6em;
+}
+
+.company-name {
+    font-size: 1.6rem;
+    margin-top: 0.5rem;
+}
+
+@media (max-width: 500px) {
+    html {
+        font-size: 50%;
+    }
+}
+
+@media(min-width: 501px) and (max-width: 768px) {
+    html {
+        font-size: 50%;
+    }
+}

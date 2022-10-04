@@ -1,0 +1,28 @@
+import { AppBar, Typography, Toolbar, Tab, Tabs } from "@mui/material";
+
+const TopBar = () => {
+  return (
+    <>
+      <AppBar sx={{ background: "#e0dfe6" }} position="sticky">
+        <Typography sx={{ margin: "auto", color: "black" }}>
+          OLTIVA PRODUCTS
+        </Typography>
+      </AppBar>
+
+      <AppBar position="relative" sx={{ background: "#191e69" }}>
+        <Toolbar>
+          <Typography>Oltiva</Typography>
+          <Tabs sx={{ margin: "auto" }} textColor="#fff">
+            <Tab label="Home"></Tab>
+            <Tab label="Products"></Tab>
+            <Tab label="Cloud"></Tab>
+            <Tab label="Settings"></Tab>
+            <Tab label="MyAccount"></Tab>
+          </Tabs>
+        </Toolbar>
+      </AppBar>
+    </>
+  );
+};
+
+export default TopBar;
