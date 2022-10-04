@@ -7,3 +7,9 @@ body {
   -moz-osx-font-smoothing: grayscale;
   overflow-x: hidden;
 }
+
+#content{margin: 0 auto; width: 95%;}
+.logo{ margin:0; width: 142px; height: 46px;}
+.heading-container{margin: 10px 0; width: 100%;}
+.carosuel-container{ clear: both; float: left; width: 100%; margin: 10px auto;}
+li.thumb img {margin-bottom: 0;}

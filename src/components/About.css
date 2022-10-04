@@ -16,9 +16,24 @@ img {
 }
 
 h1 {
-    text-align: center;
+    text-align: left !important;
+    color: #19191a;
 }
+h1, h2 {
+    font-family: "Segoe UI";
+    color: #5f8ee4 !important;
+    text-align: left !important;
+  }
+  
+  h1 {
+    font-size: 2.4rem;
+    font-weight: 300;
+    line-height: 1.2;
+    margin: 0 0 .4em;
+  }
 
 p {
-    text-align: center;
+    text-align:left;
+    margin: 5px;
 }
+.aboutus-img{ padding: 0 5px;}

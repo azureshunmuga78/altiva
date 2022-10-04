@@ -1,3 +1,4 @@
+import React from "react";
 import "./Products.css";
 import axios from "axios";
 import MenuBar from "./MenuBar";
@@ -9,14 +10,22 @@ import Typography from "@mui/material/Typography";
 import { CardActionArea, Grid } from "@mui/material";
 import { useNavigate } from "react-router-dom";
 
-const Products = () => {
+
+
+const Catalogue = (props) => {
   var [responsebody, setBody] = useState([]);
-  const [itemCount, setCount] = useState([]);
+  var [catalogueid, setID] = useState([]);
+  var [responseproductbody, setProBody] = useState([]);
+  var catalogName = window.location.href;
+  catalogName=catalogName.split("/").pop().replaceAll('-', ' ');
+  
+  console.log(window.location.href);
   const navigate = useNavigate();
   const handleClickCatdetail = function(id) { 
     navigate("/products/"+id);
     console.log(id);
   };
+  
   const config = {
     headers: {
       "X-Auth-Token": "50b16e4b4aac4ab185e16e331b0c1c97",
@@ -24,40 +33,70 @@ const Products = () => {
     },
   };
 
+
+
   const url =
-    "https://atci-sandbox03.sitecoresandbox.cloud/api/entities/query?query=(Definition.Name%20==%20%22M.PCM.Product%22)";
+    "https://atci-sandbox03.sitecoresandbox.cloud/api/entities/query?query=(String%28%27CatalogName%27%29==%20%20%22"+catalogName+"%22)";
+    const Producturl =
+    "https://atci-sandbox03.sitecoresandbox.cloud/api/entities/query?query=Definition.Name=='M.PCM.Product' AND Parent('PCMCatalogToProduct').id==";
 
-  const url2 =
-    "https://atci-sandbox03.sitecoresandbox.cloud/api/entities/33504";
-
-  const url3 =
-    "https://atci-sandbox03.sitecoresandbox.cloud/api/entities/32309";
+    
 
   const getData1 = async () => {
     await axios
       .get(url, config)
       .then((response) => {
         setBody(response.data.items);
-        setCount(response.data.items.length);
+        setID(response.data.items[0].id);
+        console.log(url);
+        console.log("item count");
         console.log(response.data.items.length);
+        getData2(response.data.items[0].id);
       })
       .catch((err) => {
         console.log(err);
       });
   };
 
- 
+  const getData2 = async (id) => {
+    await axios
+      .get(Producturl+id, config)
+      .then((response) => {
+        setProBody(response.data.items);
+        
+        console.log(Producturl+catalogueid);
+        console.log("item count");
+        console.log(response.data.items.length);
+        
+      })
+      .catch((err) => {
+        console.log(err);
+      });
+  };
+
+  
 
   useEffect(() => {
     
     getData1();
+    
     
   }, []);
 
   return (
     <>
       <MenuBar />
-      <div className="heading-container"><h1> Our Products</h1></div>
+      <div id="content" className="container" > 
+      <>
+{responsebody.map((data,index)=>{
+  return  <>
+      <div className="heading-container"><h1> {responsebody[0].properties.CatalogLabel["en-US"]} </h1></div>
+      
+      <img src={responsebody[0].renditions.downloadOriginal[0].href} alt="about"  align="right" className="aboutus-img"/>
+    
+      <div dangerouslySetInnerHTML={{ __html: responsebody[0].properties.CatalogDescription["en-US"] }}></div>
+      <div className="heading-container"><h2> Products</h2></div>
+      <div className="catalogue-product-container">
       <Grid
         container
         spacing={3}
@@ -65,7 +104,7 @@ const Products = () => {
       >
           
        <>
-{responsebody.map((data,index)=>{
+{responseproductbody.map((data,index)=>{
   return  <><Grid item xs={3} sx={{ display: "flex", alignItems: "center", justifyContent: "center" }}>
   <Card sx={{ maxWidth: 425 }}>
     <CardActionArea>
@@ -92,8 +131,15 @@ const Products = () => {
 
 </>
       </Grid>
+
+</div>
+
+      </>
+})}
+   </>   
+      </div>
     </>
   );
 };
 
-export default Products;
+export default Catalogue;

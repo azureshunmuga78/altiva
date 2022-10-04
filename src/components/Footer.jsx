@@ -14,7 +14,7 @@ const Footer = () => {
           <i className="fab fa-youtube"></i>
         </a>
         <div className="bottom-footer">
-          <p class="company-name">
+          <p className="company-name">
             Copyright &copy; Oltiva, All Rights Reserved 2017
           </p>
         </div>

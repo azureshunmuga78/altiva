@@ -1,11 +1,11 @@
 import { useState } from "react";
+import { useNavigate } from "react-router-dom";
 import MenuIcon from "@mui/icons-material/Menu";
 import ChatIcon from "@mui/icons-material/Chat";
 import HomeIcon from "@mui/icons-material/Home";
-import GroupIcon from "@mui/icons-material/Group";
-import SettingsIcon from "@mui/icons-material/Settings";
+import InfoIcon from "@mui/icons-material/Info";
 import LanguageIcon from "@mui/icons-material/Language";
-import CloudQueueIcon from "@mui/icons-material/CloudQueue";
+import ContactsIcon from "@mui/icons-material/Contacts";
 import {
   AppBar,
   Typography,
@@ -27,60 +27,91 @@ const MenuBar = () => {
     setAnchorEl(null);
   };
 
+  const handleClickProd = () => {
+    navigate("/products");
+  };
+
+  const handleClickCat = () => {
+    navigate("/catalogue");
+  };
+
+  const handleClickHome = () => {
+    navigate("/");
+  };
+
+  const handleClickAbout = () => {
+    navigate("/about");
+  };
+
+  const handleClickContact = () => {
+    navigate("/contact");
+  };
+
+  const handleClickChat = () => {
+    navigate("/chat");
+  };
+
   const [value, setValue] = useState();
+  const navigate = useNavigate();
   return (
     <>
       <AppBar sx={{ background: "#e0dfe6" }} position="sticky">
         <Typography sx={{ margin: "auto", color: "black" }}>
-          OLTIVA PRODUCTS
+          Oltiva Watch World
         </Typography>
       </AppBar>
 
-      <AppBar position="relative" sx={{ background: "#2c228d" }}>
+      <AppBar position="relative" sx={{ background: "#00375F" }}>
         <Toolbar>
-          <Typography>Oltiva</Typography>
-          <Tabs
+{       <img class="logo" src="\rsz_oltiva.png" alt="Oltiva Watch World" />
+ }          
+
+        <Tabs
             sx={{ margin: "auto" }}
             textColor="#fff"
             value={value}
             onChange={(e, value) => setValue(value)}
           >
-            <Tab icon={<HomeIcon />} label="Home"></Tab>
-            <Tab icon={<LanguageIcon />} label="Products"></Tab>
-            <Tab icon={<CloudQueueIcon />} label="Cloud"></Tab>
-            <Tab icon={<SettingsIcon />} label="Settings"></Tab>
-            <Tab icon={<GroupIcon />} label="MyAccount"></Tab>
-            <Tab icon={<ChatIcon />} label="LiveChat"></Tab>
+
+            <Tab
+              onClick={handleClickHome}
+              icon={<HomeIcon />}
+              label="Home"
+            ></Tab>
+
+            
+            <Tab
+              onClick={handleClickCat}
+              icon={<LanguageIcon />}
+              label="Catalogue"
+            ></Tab>
+            <Tab
+              onClick={handleClickProd}
+              icon={<LanguageIcon />}
+              label="Products"
+            ></Tab>
+            
+
+            <Tab
+              onClick={handleClickAbout}
+              icon={<InfoIcon />}
+              label="About Us"
+            ></Tab>
+
+            <Tab
+              onClick={handleClickContact}
+              icon={<ContactsIcon />}
+              label="Contact Us"
+            ></Tab>
+            
+            <Tab
+              onClick={handleClickChat}
+              icon={<ChatIcon />}
+              label="Live Chat"
+            ></Tab>
           </Tabs>
 
-          <div>
-            <MenuIcon
-              size="large"
-              onClick={handleMenu}
-              color="inherit"
-            ></MenuIcon>
-            <Menu
-              id="menu-appbar"
-              anchorEl={anchorEl}
-              anchorOrigin={{
-                vertical: "top",
-                horizontal: "right",
-              }}
-              keepMounted
-              transformOrigin={{
-                vertical: "top",
-                horizontal: "right",
-              }}
-              open={Boolean(anchorEl)}
-              onClose={handleClose}
-            >
-              <MenuItem onClick={handleClose}>HOME</MenuItem>
-              <MenuItem onClick={handleClose}>PRODUCTS</MenuItem>
-              <MenuItem onClick={handleClose}>ABOUT US</MenuItem>
-              <MenuItem onClick={handleClose}>HELP</MenuItem>
-              <MenuItem onClick={handleClose}>LOG IN</MenuItem>
-            </Menu>
-          </div>
+          
         </Toolbar>
       </AppBar>
     </>
