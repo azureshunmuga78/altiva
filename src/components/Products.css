@@ -31,7 +31,7 @@ div.productdetail-container p{ text-align: left ; margin: 5px 0;}
 .product-img p{ text-align: center !important;}
 #content{ font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif; font-size: 16px;}
 .carousel img{ margin-top:0px;}
-.catalogue-product-container{ float: left; width: 98%; margin: 5px 3px;}
+.catalogue-product-container{ float: left; width: 98%; margin: 5px 3px 30px 3px;}
 .catalogue-product-container img.product-thumb {
     margin-top: 2rem;
     display: block;

@@ -1,0 +1,244 @@
+.product-reviews-summary {
+    margin: auto;
+    text-align: center;
+  }
+  .product-reviews-summary {
+    display: table;
+    
+  }
+  .product-reviews-summary .rating-summary {
+    margin: 0 4px 0 0;
+  }
+  .product-reviews-summary .rating-summary {
+    display: table-cell;
+    left: -5px;
+    position: relative;
+    text-align: left;
+    vertical-align: middle;
+  }
+  .rating-summary {
+    overflow: hidden;
+    white-space: nowrap;
+  }
+  .product-reviews-summary .rating-summary .label, .table-reviews .rating-summary .label {
+    border: 0;
+    clip: rect(0,0,0,0);
+    height: 1px;
+    margin: -1px;
+    overflow: hidden;
+    padding: 0;
+    position: absolute;
+    width: 1px;
+  }
+  .rating-summary .rating-result {
+    margin-left: -5px;
+  }
+  .rating-summary .rating-result {
+    width: 100px;
+    display: inline-block;
+    position: relative;
+    vertical-align: middle;
+  }
+  .rating-summary .rating-result::before {
+    left: 0;
+    position: absolute;
+    top: 0;
+    width: 100%;
+    z-index: 1;
+    -webkit-font-smoothing: antialiased;
+    color: #c7c7c7;
+    font-family: icons-blank-theme;
+    font-size: 28px;
+    height: 28px;
+    letter-spacing: -10px;
+    line-height: 28px;
+    content: '\e605' '\e605' '\e605' '\e605' '\e605';
+    display: block;
+    font-style: normal;
+    font-weight: 400;
+ 
+  }
+  .rating-summary .rating-result > span {
+    display: block;
+    overflow: hidden;
+  }
+  .rating-summary .rating-result > span::before {
+    position: relative;
+    z-index: 2;
+    -webkit-font-smoothing: antialiased;
+    color: #ff5501;
+    font-family: icons-blank-theme;
+    font-size: 28px;
+    height: 28px;
+    letter-spacing: -10px;
+    line-height: 28px;
+    content: '\e605' '\e605' '\e605' '\e605' '\e605';
+    display: block;
+    font-style: normal;
+    font-weight: 400;
+    
+  }
+  
+  *, ::after, ::before {
+    box-sizing: border-box;
+  }
+  .starcontainer{ width: 100%;}
+  .rating-summary .rating-result > span span {
+    border: 0;
+    clip: rect(0,0,0,0);
+    height: 1px;
+    margin: -1px;
+    overflow: hidden;
+    padding: 0;
+    position: absolute;
+    width: 1px;
+  }
+  @font-face {
+    font-family: 'icons-blank-theme';
+    src: url('./fonts/Blank-Theme-Icons.eot');
+    src:  url('./fonts/Blank-Theme-Icons.eot?#iefix') format('embedded-opentype'),
+          url('./fonts/Blank-Theme-Icons.woff') format('woff'),
+          url('./fonts/Blank-Theme-Icons.ttf') format('truetype');
+    font-weight: normal;
+    font-style: normal;
+}
+ .product-item-inner {
+  display: block;
+}
+.product-item-inner {
+	width: 100%;
+	
+	position: absolute;
+	bottom: 0px;
+	background: rgb(35, 52, 69);
+	z-index: 99;
+	padding-top: 3px;
+}
+.product-item-inner {
+	width: 100%;
+	
+	position: absolute;
+	bottom: 0px;
+	background: rgb(35, 52, 69);
+	z-index: 99;
+	padding-top: 3px;
+  left:1px;
+}
+.product-item-actions {
+  margin: 0;
+  font-size: 0;
+  text-align: center;
+}
+.product-item-actions .actions-primary {
+	display: inline-block;
+}
+.product-item-actions > * {
+	font-size: 1.4rem;
+}
+.product-item-inner img{ margin: 0;}
+.product-item-inner button {
+	background: 0 0;
+	border: 0;
+	padding: 0;
+}
+.product-item-inner button span {
+	width: 35px;
+	display: inherit;
+}
+.actions-primary + .actions-secondary {
+	vertical-align: top;
+}
+.product-item-actions .actions-secondary {
+	display: inline-block;
+	font-size: 1.4rem;
+
+	white-space: nowrap;
+}
+ .product-item-inner .actions-secondary a::before {
+	font-size: 56px;
+	top: 0;
+	vertical-align: text-bottom;
+	color: #36e0ba;
+	width: 50px;
+	height: 27px;
+	line-height: 27px;
+}
+ .actions-primary + .actions-secondary a.action.towishlist::before {
+	position: absolute;
+	left: 0;
+	top: -27px !important;
+  font-size: 60px;
+ 
+}
+.action.towishlist::before, .products.list.items .action.towishlist::before, .table-comparison .action.towishlist::before {
+	content: '\e601';
+}
+.abs-actions-addto-gridlist > span, .product-item-actions .actions-secondary > .action > span, .table-comparison .wishlist.split.button > .action.split > span, .product-items .wishlist.split.button > .action.split > span, .product-items .action.towishlist > span, .products.list.items .action.towishlist > span, .table-comparison .action.towishlist > span {
+	border: 0;
+	clip: rect(0,0,0,0);
+	height: 1px;
+	margin: -1px;
+	overflow: hidden;
+	padding: 0;
+	position: absolute;
+	width: 1px;
+}
+
+.catalog-category-view .actions-primary + .actions-secondary {
+	vertical-align: top;
+}
+.product-item-actions .actions-secondary {
+	display: inline-block;
+	font-size: 1.4rem;
+	vertical-align: middle;
+	white-space: nowrap;
+  position: relative;
+}
+.catalog-category-view .actions-primary + .actions-secondary a.action.towishlist {
+	position: relative;
+  display: inline-block;
+  white-space: normal;
+}
+.product-item-actions .actions-secondary > .action {
+	line-height: 35px;
+	text-align: center;
+	width: 35px;
+  display: block;
+}
+[role="button"] {
+	cursor: pointer;
+}
+.product-item-inner .actions-secondary a::before {
+	font-size: 56px;
+	top: 0;
+	vertical-align: text-bottom;
+	color: #36e0ba;
+	width: 50px;
+	height: 27px;
+	line-height: 27px;
+}
+.catalog-category-view .actions-primary + .actions-secondary a.action.towishlist::before {
+	position: absolute;
+	left: 0;
+	top: -27px !important;
+}
+.product-items .action.towishlist::before, .products.list.items .action.towishlist::before, .table-comparison .action.towishlist::before {
+	content: '\e601';
+}
+.abs-actions-addto-gridlist::before, .product-item-actions .actions-secondary > .action::before, .table-comparison .wishlist.split.button > .action.split::before, .product-items .wishlist.split.button > .action.split::before, .product-items .action.towishlist::before, .products.list.items .action.towishlist::before, .table-comparison .action.towishlist::before {
+	-webkit-font-smoothing: antialiased;
+	-moz-osx-font-smoothing: grayscale;
+	font-size: 29px;
+	line-height: 24px;
+	color: #36e0ba;
+	font-family: icons-blank-theme;
+	vertical-align: middle;
+	display: inline-block;
+	font-weight: 400;
+	overflow: hidden;
+	speak: none;
+	text-align: center;
+}
+.product-item-actions .actions-secondary > .action::before {
+	margin: 0;
+}

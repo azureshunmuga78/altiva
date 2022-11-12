@@ -109,22 +109,51 @@ const Catalogue = (props) => {
        <>
 {responseproductbody.map((data,index)=>{
   return  <><Grid item xs={3} sx={{ display: "flex", alignItems: "center", justifyContent: "center" }}>
-  <Card sx={{ maxWidth: 425 }}>
+ <Card sx={{ maxWidth: 300, minWidth: 300, PaddingLeft: 0}}>
     <CardActionArea>
       <CardMedia class="product-thumb"
         component="img"
         height="170"
         image={data.renditions.downloadOriginal ? data.renditions.downloadOriginal[0].href:null}
         alt="green iguana" onClick={handleClickCatdetail.bind(this, data.id)}/>
-      <CardContent>
+     <CardContent sx={{minHeight: 135}}>
         <Typography gutterBottom variant="h5" component="div">
-          {data.properties.ProductLabel["en-US"]}
+          {data.properties.ProductName}
         </Typography>
-        <Typography gutterBottom variant="h6" component="div">
+        {/*<Typography gutterBottom variant="h6" component="div">
           {data.properties.ProductNumber}
+</Typography>*/}
+        <Typography variant="string" component="string">
+        <div class="product-reviews-summary short">
+          <div class="rating-summary">
+          <span class="label"><span>Rating:</span></span>
+              <div class="rating-result" title="100%">
+                <span class="starcontainer"><span>100%</span></span>
+              </div>
+            </div>
+
+          </div>
         </Typography>
-        <Typography variant="body2" color="text.secondary">
-        {data.properties.ProductShortDescription["en-US"]}
+        <Typography variant="string" component="string">
+        <div class="product-item-inner">
+<div class="product actions product-item-actions">
+<div class="actions-primary">
+
+
+<button type="submit" title="Add to Cart">
+
+
+<span><img src="https://www.pebblecart.com/pub/media/cart_icon1.svg"/></span>
+</button>
+
+</div>
+<div data-role="add-to-links" class="actions-secondary">
+<a href="#" class="action towishlist" title="Add to Wish List" aria-label="Add to Wish List" data-post="{&quot;action&quot;:&quot;https:\/\/www.pebblecart.com\/wishlist\/index\/add\/&quot;,&quot;data&quot;:{&quot;product&quot;:&quot;441&quot;,&quot;uenc&quot;:&quot;aHR0cHM6Ly93d3cucGViYmxlY2FydC5jb20vc21hcnQtd2VhcmFibGVzL3Nob3Atbm93L2FsbC5odG1s&quot;}}" data-action="add-to-wishlist" role="button">
+<span>Add to Wish List</span>
+</a>
+</div>
+</div>
+</div>
         </Typography>
       </CardContent>
     </CardActionArea>
