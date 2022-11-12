@@ -2,6 +2,7 @@ import axios from "axios";
 import { useEffect, useState } from "react";
 import "./About.css";
 import MenuBar from "./MenuBar";
+import SecondaryMenuBar from "./SecondaryMenuBar";
 
 
 
@@ -39,6 +40,7 @@ const About = () => {
   return (
     <>
       <MenuBar />
+      <SecondaryMenuBar />
       <div id="content" className="container" > 
       <div className="heading-container" dangerouslySetInnerHTML={{ __html: "<h1>"+title+"</h1>" }}></div>
       <img src="./about-img.png" alt="about"  align="right" className="aboutus-img"/>

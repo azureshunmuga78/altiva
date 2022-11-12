@@ -9,6 +9,7 @@ import CatalogueCal from "./components/Cataloguecal";
 import Cataloguelaptop from "./components/Cataloguelap";
 import ProductDetail from "./components/ProductDetail";
 import ContactUs from "./components/ContactUs";
+import Chat from "./components/Chat";
 import { Route, Routes } from "react-router-dom";
 
 function App() {
@@ -25,6 +26,7 @@ function App() {
         <Route name="catalogue" path="catalogue/Laptop" element={<Cataloguelaptop />}/>
         <Route name="productdetail" path="/products/:productid" element={<ProductDetail />}/>
         <Route path="/contact-us" element={<ContactUs />} />
+        <Route path="/chat" element={<Chat />} />
       </Routes>
       <Footer />
     </>
