@@ -8,7 +8,7 @@ import CardContent from "@mui/material/CardContent";
 import CardMedia from "@mui/material/CardMedia";
 import Typography from "@mui/material/Typography";
 import { CardActionArea, Grid } from "@mui/material";
-import { useNavigate, useSearchParams  } from "react-router-dom";
+import { useNavigate  } from "react-router-dom";
 import SecondaryMenuBar from "./SecondaryMenuBar";
 
 

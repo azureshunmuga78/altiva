@@ -6,7 +6,7 @@ import MenuBar from "./MenuBar";
 import ProductCarousel from "./productcarosuel";
 import SecondaryMenuBar from "./SecondaryMenuBar";
 
-var Carousel = require('react-responsive-carousel').Carousel;
+
 
 
 
@@ -58,19 +58,57 @@ const ProductDetail = () => {
       .then((response) => {
         // console.log(response.data.properties);
         setResponseBody(response.data);
+        if(response.data.properties.ProductLongDescription["en-US"]){
         setBody(response.data.properties.ProductLongDescription["en-US"].replaceAll("^\"|\"$", ""));
-        setQuote("\""+response.data.properties.ProductShortDescription["en-US"].replace("&lt;h1&gt;", "")+"\"");
+        }
+        else{
+          setBody("");
+        }
+        if(response.data.properties.ProductShortDescription["en-US"]){
+          setQuote("\""+response.data.properties.ProductShortDescription["en-US"].replace("&lt;h1&gt;", "")+"\"");
+        }
+        else{
+          setQuote("");
+        }
+       
+        if(response.data.properties.ProductName){
         setTitle(response.data.properties.ProductName.replaceAll("^\"|\"$", ""));
+        }
+        else{
+          setTitle("");
+        }
+        if(response.data.properties.Price){
         setPrice("<b>Price : Rs.</b>"+response.data.properties.Price);
+        }
+        else{
+          setPrice("<b>Price : Rs.</b>*****");
+        }
         if(response.data.properties.InStock == true){
           setInstock("Stock: <b>Available</b>");
         }
         else{
           setInstock("Stock: <b>Not Available</b>");
         }
+        if(response.data.properties.ProductNumber){
         setCode(response.data.properties.ProductNumber);
-        setBrand(response.data.path[0].values["en-US"].replaceAll("^\"|\"$", ""));
-        setType(response.data.path[1].values["en-US"].replaceAll("^\"|\"$", ""));
+        }
+        else{
+          setCode("");
+        }
+        if(response.data.path[0].values["en-US"]){
+          setBrand(response.data.path[0].values["en-US"].replaceAll("^\"|\"$", ""));
+        }
+        else{
+          setBrand("");
+        }
+        
+        if(response.data.path[1].values["en-US"]){
+          setType(response.data.path[1].values["en-US"].replaceAll("^\"|\"$", ""));
+        }
+        else{
+          setType("");
+        }
+       
         console.log(response.data);
        
         //setImg(response.data.properties.Blog_Title);
