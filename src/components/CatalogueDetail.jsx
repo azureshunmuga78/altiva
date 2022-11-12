@@ -85,6 +85,11 @@ const Catalogue = (props) => {
     
     
   }, []);
+  const getColor = function (id){
+    alert(id);
+  };
+ 
+  
 
   return (
     <>
@@ -109,7 +114,9 @@ const Catalogue = (props) => {
           
        <>
 {responseproductbody.map((data,index)=>{
-  return  <><Grid item xs={3} sx={{ display: "flex", alignItems: "center", justifyContent: "center" }}>
+  return  <>
+
+  <Grid item xs={3} sx={{ display: "flex", alignItems: "center", justifyContent: "center" }}>
   <Card sx={{ maxWidth: 300, minWidth: 300, PaddingLeft: 0}}>
     <CardActionArea>
       <CardMedia class="product-thumb"
@@ -117,7 +124,7 @@ const Catalogue = (props) => {
         height="170"
         image={data.renditions.downloadOriginal ? data.renditions.downloadOriginal[0].href:null}
         alt="green iguana" onClick={handleClickCatdetail.bind(this, data.id)}/>
-      <CardContent sx={{minHeight: 135}}>
+      <CardContent sx={{minHeight: 170}}>
         <Typography gutterBottom variant="h5" component="div">
           {data.properties.ProductName}
         </Typography>

@@ -4,6 +4,10 @@
   }
   .product-reviews-summary {
     display: table;
+position: absolute;
+bottom: 57px;
+text-align: center;
+width: 93%;
     
   }
   .product-reviews-summary .rating-summary {
@@ -13,7 +17,7 @@
     display: table-cell;
     left: -5px;
     position: relative;
-    text-align: left;
+    margin: auto;
     vertical-align: middle;
   }
   .rating-summary {
@@ -34,9 +38,10 @@
     margin-left: -5px;
   }
   .rating-summary .rating-result {
-    width: 100px;
-    display: inline-block;
+    
+    left: -5px;
     position: relative;
+   
     vertical-align: middle;
   }
   .rating-summary .rating-result::before {
