@@ -2,7 +2,9 @@ import axios from "axios";
 import { useEffect, useState } from "react";
 import "./About.css";
 import MenuBar from "./MenuBar";
-import he from "he";
+import SecondaryMenuBar from "./SecondaryMenuBar";
+
+
 var Carousel = require('react-responsive-carousel').Carousel;
 
 const Home = () => {
@@ -38,6 +40,7 @@ const Home = () => {
   return (
     <>
       <MenuBar />
+      <SecondaryMenuBar />
       <div id="content" className="container" > 
       <div className="heading-container" dangerouslySetInnerHTML={{ __html: "<h1>"+title+"</h1>" }}></div>
       <div dangerouslySetInnerHTML={{ __html: quote }}></div>

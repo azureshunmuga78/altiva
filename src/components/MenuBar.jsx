@@ -4,7 +4,7 @@ import MenuIcon from "@mui/icons-material/Menu";
 import ChatIcon from "@mui/icons-material/Chat";
 import HomeIcon from "@mui/icons-material/Home";
 import InfoIcon from "@mui/icons-material/Info";
-import LanguageIcon from "@mui/icons-material/Language";
+
 import ContactsIcon from "@mui/icons-material/Contacts";
 import {
   AppBar,
@@ -44,7 +44,7 @@ const MenuBar = () => {
   };
 
   const handleClickContact = () => {
-    navigate("/contact");
+    navigate("/contact-us");
   };
 
   const handleClickChat = () => {
@@ -80,7 +80,7 @@ const MenuBar = () => {
             ></Tab>
 
             
-            <Tab
+          {/*  <Tab
               onClick={handleClickCat}
               icon={<LanguageIcon />}
               label="Catalogue"
@@ -89,7 +89,7 @@ const MenuBar = () => {
               onClick={handleClickProd}
               icon={<LanguageIcon />}
               label="Products"
-            ></Tab>
+            ></Tab>*/}
             
 
             <Tab

@@ -98,7 +98,7 @@ const Catalogue = (props) => {
       {/*<img src={responsebody[0].renditions.downloadOriginal ? responsebody[0].renditions.downloadOriginal[0].href:null} alt="about"  align="right" className="aboutus-img"/>*/}
     
       <div dangerouslySetInnerHTML={{ __html: responsebody[0].properties.CatalogDescription["en-US"] }}></div>
-      <div className="heading-container"><h2> All Watches</h2></div>
+      <div className="heading-container"><h2> All Laptops</h2></div>
       <div className="catalogue-product-container">
       <Grid
         container

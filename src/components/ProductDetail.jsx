@@ -4,8 +4,10 @@ import "./About.css";
 import "./carousel.css";
 import MenuBar from "./MenuBar";
 import ProductCarousel from "./productcarosuel";
-import he from "he";
+import SecondaryMenuBar from "./SecondaryMenuBar";
+
 var Carousel = require('react-responsive-carousel').Carousel;
+
 
 
 
@@ -89,6 +91,7 @@ const ProductDetail = () => {
     
     <>
       <MenuBar />
+      <SecondaryMenuBar />
       <div id="content" className="productdetail-container" > 
      
       <div className="heading-container" dangerouslySetInnerHTML={{ __html: "<h1>"+title+"</h1>" }}></div>

@@ -2,7 +2,7 @@ import axios from "axios";
 import { useEffect, useState } from "react";
 import "./About.css";
 import MenuBar from "./MenuBar";
-import he from "he";
+
 
 
 

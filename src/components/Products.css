@@ -31,7 +31,7 @@ div.productdetail-container p{ text-align: left ; margin: 5px 0;}
 .product-img p{ text-align: center !important;}
 #content{ font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif; font-size: 16px;}
 .carousel img{ margin-top:0px;}
-.catalogue-product-container{ float: left; width: 55%; margin: 5px 3px;}
+.catalogue-product-container{ float: left; width: 98%; margin: 5px 3px;}
 .catalogue-product-container img.product-thumb {
     margin-top: 2rem;
     display: block;
@@ -40,7 +40,7 @@ div.productdetail-container p{ text-align: left ; margin: 5px 0;}
     margin-bottom: 2rem;
     width:200px; height: 200px;;
 }
-.catalogue-product-container div.MuiGrid-item{ max-width: 45%; width: 100% !important; flex-basis: 75%;}
+.catalogue-product-container div.MuiGrid-item{ max-width: 30%; width: 30% !important; flex-basis: 30%;}
 
 .swiper {
     width: 100%;
