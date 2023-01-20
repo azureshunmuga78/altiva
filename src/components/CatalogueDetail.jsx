@@ -148,7 +148,7 @@ const Catalogue = (props) => {
         <Typography variant="string" component="string">
         <div class="product-reviews-summary short">
           <div class="rating-summary">
-          <span class="label"><span>Rating:{getColor(data.id)}</span></span>
+          <span class="label"><span></span></span>
               <div class="rating-result" title="100%">
                 <span class="starcontainer"><span>100%</span></span>
               </div>
