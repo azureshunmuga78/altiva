@@ -16,6 +16,7 @@ import SecondaryMenuBar from "./SecondaryMenuBar";
 const Catalogue = (props) => {
   var [responsebody, setBody] = useState([]);
   var [catalogueid, setID] = useState([]);
+  var [productcolor, setColor] = useState([]);
   var [responseproductbody, setProBody] = useState([]);
   var catalogName = window.location.href;
  
@@ -43,7 +44,8 @@ const Catalogue = (props) => {
     const Producturl =
     "https://atci-sandbox03.sitecoresandbox.cloud/api/entities/query?query=Definition.Name=='M.PCM.Product' AND Parent('PCMCatalogToProduct').id==";
 
-    
+    const Productcolor =
+    "https://atci-sandbox03.sitecoresandbox.cloud/api/entities";
 
   const getData1 = async () => {
     await axios
@@ -85,8 +87,20 @@ const Catalogue = (props) => {
     
     
   }, []);
-  const getColor = function (id){
-    alert(id);
+  const getColor = async (id) => {
+    await axios
+      .get(Productcolor+id+"?relatedPathProperties=AssetTypeToAsset|M.AssetType|Label,TriggersVision", config)
+      .then((response) => {
+        alert(id);
+        if(response.data.related_paths.C.PCM.ProductColor){
+          alert(response.data.related_paths.C.PCM.ProductColor);
+          setColor(response.data.related_paths.C.PCM.ProductColor);
+        }
+        
+          })
+      .catch((err) => {
+        console.log(err);
+      });
   };
  
   
@@ -134,7 +148,7 @@ const Catalogue = (props) => {
         <Typography variant="string" component="string">
         <div class="product-reviews-summary short">
           <div class="rating-summary">
-          <span class="label"><span>Rating:</span></span>
+          <span class="label"><span>Rating:{getColor(data.id)}</span></span>
               <div class="rating-result" title="100%">
                 <span class="starcontainer"><span>100%</span></span>
               </div>

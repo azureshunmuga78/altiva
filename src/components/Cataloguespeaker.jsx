@@ -16,7 +16,7 @@ const Catalogue = (props) => {
   var [responsebody, setBody] = useState([]);
   var [catalogueid, setID] = useState([]);
   var [responseproductbody, setProBody] = useState([]);
-  var [responseproductcolor, setProColor] = useState([]);
+  var [productcolor, setColor] = useState([]);
   var catalogName = window.location.href;
   var catalogName = window.location.href;
  
@@ -44,7 +44,8 @@ const Catalogue = (props) => {
     const Producturl =
     "https://atci-sandbox03.sitecoresandbox.cloud/api/entities/query?query=Definition.Name=='M.PCM.Product' AND Parent('PCMCatalogToProduct').id==";
 
-    
+    const Productcolor =
+    "https://atci-sandbox03.sitecoresandbox.cloud/api/entities/";
 
   const getData1 = async () => {
     await axios
@@ -86,8 +87,20 @@ const Catalogue = (props) => {
     
     
   }, []);
-  const getColor = function (id){
-    alert(id);
+  const getColor = async (id) => {
+    await axios
+      .get(Productcolor+id+"?relatedPathProperties=AssetTypeToAsset|M.AssetType|Label,TriggersVision", config)
+      .then((response) => {
+       
+        if(response.data.related_paths["C.PCM.ProductColor"]){
+         
+          {/*productcolor.push(response.data.related_paths["C.PCM.ProductColor"]);*/}
+        }
+        
+          })
+      .catch((err) => {
+        console.log(err);
+      });
   };
 
   return (
@@ -114,7 +127,7 @@ const Catalogue = (props) => {
        <>
 {responseproductbody.map((data,index)=>{
   return  <>
-   
+  
   <Grid item xs={3} sx={{ display: "flex", alignItems: "center", justifyContent: "center" }}>
   <Card sx={{ maxWidth: 300, minWidth: 300, PaddingLeft: 0}}>
     <CardActionArea>
