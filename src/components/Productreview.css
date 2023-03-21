@@ -1,3 +1,8 @@
+.cart-img{
+width: 35px;
+height: 35px;
+padding: 5px;
+}
 .product-reviews-summary {
     margin: auto;
     text-align: center;
